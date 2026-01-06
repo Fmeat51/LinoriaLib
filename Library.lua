@@ -1254,9 +1254,13 @@ do
                 local Event;
                 Event = InputService.InputBegan:Connect(function(Input)
                     local Key;
+                    local KeyCode = Input.KeyCode;
 
                     if Input.UserInputType == Enum.UserInputType.Keyboard then
-                        Key = Input.KeyCode.Name;
+                        if Input.KeyCode == Enum.KeyCode.Backspace or Input.KeyCode == Enum.KeyCode.Escape then
+                            Key = 'None';
+                            KeyCode = Enum.KeyCode.Unknown;
+                        end;
                     elseif Input.UserInputType == Enum.UserInputType.MouseButton1 then
                         Key = 'MB1';
                     elseif Input.UserInputType == Enum.UserInputType.MouseButton2 then
@@ -1269,8 +1273,8 @@ do
                     DisplayLabel.Text = Key;
                     KeyPicker.Value = Key;
 
-                    Library:SafeCallback(KeyPicker.ChangedCallback, Input.KeyCode or Input.UserInputType)
-                    Library:SafeCallback(KeyPicker.Changed, Input.KeyCode or Input.UserInputType)
+                    Library:SafeCallback(KeyPicker.ChangedCallback, KeyCode or Input.UserInputType)
+                    Library:SafeCallback(KeyPicker.Changed, KeyCode or Input.UserInputType)
 
                     Library:AttemptSave();
 
