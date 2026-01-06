@@ -1257,6 +1257,7 @@ do
                     local KeyCode = Input.KeyCode;
 
                     if Input.UserInputType == Enum.UserInputType.Keyboard then
+                        Key = Input.KeyCode.Name;
                         if Input.KeyCode == Enum.KeyCode.Backspace or Input.KeyCode == Enum.KeyCode.Escape then
                             Key = 'None';
                             KeyCode = Enum.KeyCode.Unknown;
