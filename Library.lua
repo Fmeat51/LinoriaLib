@@ -1259,7 +1259,7 @@ do
                     if Input.UserInputType == Enum.UserInputType.Keyboard then
                         Key = Input.KeyCode.Name;
                         if Input.KeyCode == Enum.KeyCode.Backspace or Input.KeyCode == Enum.KeyCode.Escape then
-                            Key = 'None';
+                            Key = 'N/A';
                             KeyCode = Enum.KeyCode.Unknown;
                         end;
                     elseif Input.UserInputType == Enum.UserInputType.MouseButton1 then
