@@ -46,12 +46,10 @@ local SaveManager = {} do
 		},
 		KeyPicker = {
 			Save = function(idx, object)
-				warn('Linoria save: ', idx, object.Mode, object.Value)
 				return { type = 'KeyPicker', idx = idx, mode = object.Mode, key = object.Value }
 			end,
 			Load = function(idx, data)
 				if Options[idx] then 
-					warn('Linoria load: ', data.key, data.mode, idx)
 					Options[idx]:SetValue({ data.key, data.mode })
 				end
 			end,
