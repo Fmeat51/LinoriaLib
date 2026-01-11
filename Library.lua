@@ -1829,6 +1829,7 @@ do
             Callback = Info.Callback or function(Value) end;
             Addons = {},
             Risky = Info.Risky,
+            idx = Idx
         };
 
         local Groupbox = self;
